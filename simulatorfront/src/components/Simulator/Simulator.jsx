@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Nav = () => {
+const Simulator = () => {
     return (
         <div>
-            Nav
+            Simulator
         </div>
     );
 };
 
-export default Nav;
+export default Simulator;

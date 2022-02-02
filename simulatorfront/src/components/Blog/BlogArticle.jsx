@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Nav = () => {
+const BlogArticle = () => {
     return (
         <div>
-            Nav
+            blog article
         </div>
     );
 };
 
-export default Nav;
+export default BlogArticle;
