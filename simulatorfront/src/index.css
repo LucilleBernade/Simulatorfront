@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #0CA6CB;
+    --primary-light-color: #E2F9FF;
+    --secondary-color: #1E1B27;
+    color: var(--secondary-color);
+    scrollbar-gutter: stable;
+  }
+  
+  body {
+    margin: 0;
+  }
