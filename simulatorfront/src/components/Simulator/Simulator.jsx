@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Simulator.css'
 
 const Simulator = () => {
     const [vehicle, setVehicle] = useState([]);
-    const type = 'Van';
-    const id_regions = '4';
+    const [type, setType] = useState();
+    const [id_regions, setId_regions] = useState();
+    const [isClick, SetIsClick]= useState(false)
+
+    const showPrice = () => SetIsClick(!isClick)
 
   const getOneVehicle = () => {
     axios
@@ -24,10 +28,10 @@ const Simulator = () => {
                 <div>
                 <p>{result.type}</p>
                 <p>{result.id_regions}</p>
-                <p>Vous pouvez louer en moyenne {result.price} € par jour</p>
+                <p className={isClick? "complete" : "incomplete"}>Vous pouvez louer en moyenne {result.price} € par jour</p>
                 </div>
-
             ))}
+          <input onClick={showPrice} class="favorite styled" type="button" value="Voir le prix"></input>  
         </div>
     );
 };

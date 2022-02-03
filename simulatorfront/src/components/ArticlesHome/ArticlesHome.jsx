@@ -34,7 +34,7 @@ const Articles = () => {
                   </div>
                   <div className="Voir">
                   <Link to={`/blog/${last.id}`} className="buttonLink">
-                    Voir plus
+                    Voir
                   </Link>
                 </div>
                 </div>
