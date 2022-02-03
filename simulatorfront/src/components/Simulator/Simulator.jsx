@@ -31,24 +31,26 @@ const Simulator = () => {
     /*map type de region dans un select add event listener pour modifier le state de la region */
     <div>
       Simulator
-      {type.map((result) => (
-        <div>
-          <label for="vehicle-select">Choose a vehicle:</label>
-          <select name="vehicles" id="vehicle-select">
-            <option value="">--Please choose an option--</option>
-            <option value="Profile">Profile</option>
-            <option value="Integral">Integral</option>
-            <option value="Capucine">Capucine</option>
-            <option value="Fourgon">Fourgon</option>
-            <option value="Van">Van</option>
-          </select>
-        </div>
-      ))}
-      ;
-      {id_regions.map((result) => (
-        <div></div>
-      ))}
-      ;
+      <div>
+        <label for="vehicle-select">Choose a vehicle:</label>
+        <select name="vehicles" id="vehicle-select"></select>
+        <option value="">--Please choose an option--</option>
+        {type.map((result) => (
+          <option value={result.id}>{result.type}</option>
+        ))}
+        ;
+      </div>
+
+      <div>
+        <label for="region-select">Choose a vehicle:</label>
+        <select name="regions" id="region-select"></select>
+        <option value="">--Please choose an option--</option>
+        {id_regions.map((result) => (
+          <option value={result.id}>{result.name}</option>
+        ))}
+        ;
+      </div>
+
       {vehicle.map((result) => (
         <div>
           <p className={isClick ? "complete" : "incomplete"}>
@@ -67,27 +69,5 @@ const Simulator = () => {
     </div>
   );
 };
-
-/*<div className='type-vehicle'>
-<label for="vehicle-select">Choose a vehicle:</label>
-  <select name="vehicles" id="vehicle-select">
-      <option value="">--Please choose an option--</option>
-      <option value="Profile">Profile</option>
-      <option value="Integral">Integral</option>
-      <option value="Capucine">Capucine</option>
-      <option value="Fourgon">Fourgon</option>
-      <option value="Van">Van</option>
-    </select>
-</div
-<div className='region'>
-<label for="region-select">Choose a region:</label>
-  <select name="regions" id="region-select">
-      <option value="">--Please choose an option--</option>
-      <option value="1">Aquitaine</option>
-      <option value="2">Auvergne</option>
-      <option value="3">Andalousie</option>
-      <option value="4">Galice</option>
-    </select>
-</div> */
 
 export default Simulator;
