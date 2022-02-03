@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #0CA6CB;
-    --primary-light-color: #E2F9FF;
+    --primary-color: #5899e9;
+    --primary-light-color: #e7e9e9;
     --secondary-color: #1E1B27;
     color: var(--secondary-color);
     scrollbar-gutter: stable;
