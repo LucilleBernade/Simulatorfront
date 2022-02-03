@@ -19,7 +19,7 @@ const Articles = () => {
   return (
     <div id="articles">
       <section className="articles">
-        <h2>Découvrer les derniers articles</h2>
+        <h2>Découvrer nos derniers articles</h2>
         <div className="containerArticles">
           <div className="containerArticle">
             {articles.map((last) => (
