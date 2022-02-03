@@ -4,7 +4,7 @@ import axios from 'axios';
 const Simulator = () => {
     const [vehicle, setVehicle] = useState([]);
     const type = 'Van';
-    const id_regions = '3';
+    const id_regions = '4';
 
   const getOneVehicle = () => {
     axios

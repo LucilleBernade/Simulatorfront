@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import image1 from '../../assets/image1.jpeg';
 import './BlogArticles.css'
 
 const BlogArticle = () => {
@@ -21,24 +22,19 @@ const fetchAllArticles = () => {
     return (
       <main className="blog">
         <div className="containerblog">
-          <ul>
             {articles.map((blog) => (
               <Link to={`/blog/${blog.id}`}>
-                <li className="containerBlogArticles">
-                  <div className="backgroundGreen">
-                    <div>
-                      <img
-                        width="200"
-                        src={`http://localhost:8000/api/${blog.image}`}
-                        alt={blog.name}
+                <div className="contenu">
+                      <img className="image" src={image1}
+                        /*src={`http://localhost:8000/api/${blog.image}`}
+                        alt={blog.name}*/
                       />
-                    </div>
+                    <div className="texte">
                     <h3>{blog.name}</h3>
-                  </div>
-                </li>
+                    </div>
+                </div>
               </Link>
             ))}
-          </ul>
         </div>
       </main>
     );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import image1 from '../../assets/image1.jpeg';
 import './ArticlesHome.css';
 
 const Articles = () => {
@@ -19,26 +20,27 @@ const Articles = () => {
   return (
     <div id="articles">
       <section className="articles">
-        <h2>Découvrer nos derniers articles</h2>
-        <div className="containerArticles">
+        <h2 className="h2">Découvrer nos derniers articles</h2>
           <div className="containerArticle">
             {articles.map((last) => (
               <div>
-                <div className="left">
+                <div className="contenu">
                   <div className="containerPicture">
-                    <img src={last.img} className="image" alt={last.name} />
+                    <img src={image1} className="image" alt={last.name} />
+                    <div className="texte">
+                      <h3>{last.name}</h3>
+                      <p>{last.text}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="right">
-                  <h3>{last.name}</h3>
-                  <p>{last.text}</p>
+                  <div className="Voir">
                   <Link to={`/blog/${last.id}`} className="buttonLink">
                     Voir plus
                   </Link>
                 </div>
+                </div>
+                
               </div>
             ))}
-          </div>
         </div>
       </section>
     </div>

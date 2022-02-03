@@ -11,7 +11,7 @@ const Nav = () => {
             <button type="button">Blog</button>
             </a>
             <a href="https://www.yescapa.fr/onboarding/step/">
-            <button type="button">Déposez votre annonce</button>
+            <button type="button">Louez</button>
             </a>
             </div>
         </div>
