@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import './Simulator.css'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./Simulator.css";
 
 const Simulator = () => {
-    const [vehicle, setVehicle] = useState([]);
-    const [type, setType] = useState();
-    const [id_regions, setId_regions] = useState();
-    const [isClick, SetIsClick]= useState(false)
+  const [vehicle, setVehicle] = useState([]);
+  const [type, setType] = useState();
+  const [id_regions, setId_regions] = useState();
+  const [isClick, SetIsClick] = useState(false);
 
-    const showPrice = () => SetIsClick(!isClick)
+  const showPrice = () => SetIsClick(!isClick);
 
   const getOneVehicle = () => {
     axios
-      .get(`http://localhost:8000/api/vehicles?type=${type}&id_regions=${id_regions}`)
+      .get(
+        `http://localhost:8000/api/vehicles?type=${type}&id_regions=${id_regions}`
+      )
       .then((response) => setVehicle(response.data));
   };
 
@@ -20,20 +22,50 @@ const Simulator = () => {
     getOneVehicle();
   }, []);
 
-    return (
-        <div>
-            Simulator
+  /* appel axios type de vehicule
+    appel axios des régions 
+    useEffect qui écoute le changement de state*/
 
-            {vehicle.map((result) => (
-                <div>
-                <p>{result.type}</p>
-                <p>{result.id_regions}</p>
-                <p className={isClick? "complete" : "incomplete"}>Vous pouvez louer en moyenne {result.price} € par jour</p>
-                </div>
-            ))}
-          <input onClick={showPrice} class="favorite styled" type="button" value="Voir le prix"></input>  
+  return (
+    /*map type de vehicule dans un select onchange add event listener pour modifier le state du type de vehicule */
+    /*map type de region dans un select add event listener pour modifier le state de la region */
+    <div>
+      Simulator
+      {type.map((result) => (
+        <div>
+          <label for="vehicle-select">Choose a vehicle:</label>
+          <select name="vehicles" id="vehicle-select">
+            <option value="">--Please choose an option--</option>
+            <option value="Profile">Profile</option>
+            <option value="Integral">Integral</option>
+            <option value="Capucine">Capucine</option>
+            <option value="Fourgon">Fourgon</option>
+            <option value="Van">Van</option>
+          </select>
         </div>
-    );
+      ))}
+      ;
+      {id_regions.map((result) => (
+        <div></div>
+      ))}
+      ;
+      {vehicle.map((result) => (
+        <div>
+          <p className={isClick ? "complete" : "incomplete"}>
+            Pour votre véhicule {result.type} localisé {result.id_regions} :
+            Vous pouvez louer en moyenne {result.price} € par jour
+          </p>
+        </div>
+      ))}
+      ;
+      <input
+        onClick={showPrice}
+        class="favorite styled"
+        type="button"
+        value="Voir le prix"
+      ></input>
+    </div>
+  );
 };
 
 /*<div className='type-vehicle'>
