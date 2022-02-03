@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const Simulator = () => {
     const [vehicle, setVehicle] = useState([]);
-    const { type } = 'Van';
-    const { id_regions } = '2';
+    const type = 'Van';
+    const id_regions = '3';
 
   const getOneVehicle = () => {
     axios
@@ -24,7 +24,7 @@ const Simulator = () => {
                 <div>
                 <p>{result.type}</p>
                 <p>{result.id_regions}</p>
-                <p>Vous pouvez louer en moyenne {result.price} par jour</p>
+                <p>Vous pouvez louer en moyenne {result.price} € par jour</p>
                 </div>
 
             ))}
