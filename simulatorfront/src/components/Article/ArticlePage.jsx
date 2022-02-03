@@ -1,9 +1,10 @@
+import Article from './Article'
 import React from 'react';
 
 const ArticlePage = () => {
     return (
         <div>
-            article page
+            <Article />
         </div>
     );
 };

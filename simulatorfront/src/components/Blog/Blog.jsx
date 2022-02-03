@@ -1,9 +1,10 @@
 import React from 'react';
+import BlogArticle from './BlogArticle'
 
 const Blog = () => {
     return (
         <div>
-            blog
+            <BlogArticle/>
         </div>
     );
 };
