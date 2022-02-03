@@ -5,7 +5,9 @@ import './Nav.css'
 const Nav = () => {
     return (
         <div className="nav">
-            <img className="logo" src={logo} alt="yescapa" />
+            <a href="/">
+              <img className="logo" src={logo} alt="yescapa" />
+            </a>
             <div classname="boutton">
             <a href="blog">
             <button type="button">Blog</button>

@@ -25,7 +25,7 @@ const fetchAllArticles = () => {
             {articles.map((blog) => (
               <Link to={`/blog/${blog.id}`}>
                 <div className="contenu">
-                      <img className="image" src={image1}
+                      <img className="image" src={image1} alt="artcile"
                         /*src={`http://localhost:8000/api/${blog.image}`}
                         alt={blog.name}*/
                       />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
+import image1 from '../../assets/image1.jpeg';
 import './Article.css'
 
 const Article = () => {
@@ -19,30 +20,31 @@ const Article = () => {
   }, []);
 
     return (
-       <div className="article">
+       <div className="articlepage">
       <div>
-          <div>
-              {article.id}
+          <div className="titre">
+            <div className="article">
+                {article.id}
+            </div>
+            <div className="name">
+                {article.name}
+            </div>
           </div>
-          <div>
-              {article.name}
+          <div className="imagediv">
+            <img className="image" src={image1} alt="blog"
+            /*src={`http://localhost:8000/api/${blog.image}`}
+            alt={blog.name}*/
+            />
           </div>
-          <div>
+        
+          <div className="text">
               {article.text}
           </div>
-          <div>
+          <div className="date">
               {article.date}
           </div>
-        <li>
-          <img
-            width="200"
-            src={`http://localhost:8000/api/articles/${article.image}`}
-            //src={`${process.env.REACT_APP_API_URL}/${article.image}`}
-            alt={article.name}
-          />
-        </li>
-      </div>
-      <Link to="/blog">Retour au blog</Link>
+      </div >
+      <Link to="/blog" className="boutton" >Retour au blog</Link>
     </div>
     );
 };
