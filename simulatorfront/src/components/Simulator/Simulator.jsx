@@ -4,8 +4,8 @@ import "./Simulator.css";
 
 const Simulator = () => {
   const [vehicle, setVehicle] = useState([]);
-  const [type, setType] = useState();
-  const [id_regions, setId_regions] = useState();
+  const [type, setType] = useState('Van');
+  const [id_regions, setId_regions] = useState('2');
   const [isClick, SetIsClick] = useState(false);
 
   const showPrice = () => SetIsClick(!isClick);
@@ -31,25 +31,7 @@ const Simulator = () => {
     /*map type de region dans un select add event listener pour modifier le state de la region */
     <div>
       Simulator
-      <div>
-        <label for="vehicle-select">Choose a vehicle:</label>
-        <select name="vehicles" id="vehicle-select"></select>
-        <option value="">--Please choose an option--</option>
-        {type.map((result) => (
-          <option value={result.id}>{result.type}</option>
-        ))}
-        ;
-      </div>
-
-      <div>
-        <label for="region-select">Choose a vehicle:</label>
-        <select name="regions" id="region-select"></select>
-        <option value="">--Please choose an option--</option>
-        {id_regions.map((result) => (
-          <option value={result.id}>{result.name}</option>
-        ))}
-        ;
-      </div>
+      
 
       {vehicle.map((result) => (
         <div>
@@ -59,7 +41,7 @@ const Simulator = () => {
           </p>
         </div>
       ))}
-      ;
+
       <input
         onClick={showPrice}
         class="favorite styled"
@@ -71,3 +53,23 @@ const Simulator = () => {
 };
 
 export default Simulator;
+
+//<div>
+//<label for="vehicle-select">Choose a vehicle:</label>
+//<select name="vehicles" id="vehicle-select"></select>
+//<option value="">--Please choose an option--</option>
+//{type.map((result) => (
+//  <option value={result.id}>{result.type}</option>
+//))}
+//;
+//</div>
+//
+//<div>
+//<label for="region-select">Choose a vehicle:</label>
+//<select name="regions" id="region-select"></select>
+//<option value="">--Please choose an option--</option>
+//{id_regions.map((result) => (
+//  <option value={result.id}>{result.name}</option>
+//))}
+//;
+//</div>
